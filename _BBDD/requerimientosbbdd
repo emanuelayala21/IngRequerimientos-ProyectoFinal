@@ -2,11 +2,14 @@ CREATE TABLE usuario (
     cedula VARCHAR(20) PRIMARY KEY,
     nombre VARCHAR(100) NOT NULL,
     email VARCHAR(100) UNIQUE NOT NULL,
-    celular VARCHAR(20) NOT NULL
+    celular VARCHAR(20) NOT NULL,
+    clave VARCHAR(25) NOT NULL
+     
 );
 CREATE TABLE barbero (
     cedula VARCHAR(20) PRIMARY KEY,
-    nombre VARCHAR(100) NOT NULL
+    nombre VARCHAR(100) NOT NULL,
+    clave VARCHAR(25) NOT NULL
 );
 CREATE TABLE cita (
     id INT AUTO_INCREMENT PRIMARY KEY,

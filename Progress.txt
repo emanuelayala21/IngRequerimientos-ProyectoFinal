@@ -1,45 +1,75 @@
 
 
-🧑 Registro/Login de Usuario
-    Crear página de registro para usuarios (register.html)
-    Crear página de login para usuarios (login.html)
-    Validar login con JS + MySQL 
-    Guardar sesión local (localStorage o similar)
+🧑 User Registration/Login
 
-💈 Registro/Login de Barbero (por separado)
-    Crear página de registro de barbero (register_barbero.html)
-    Crear página de login de barbero (login_barbero.html)
+    Create registration page for users (register.html) ✅
+    Create login page for users (login.html) ✅
+    Validate login using JS + MySQL ✅
+    Store session locally ✅
 
- 📅 3. RESERVA DE CITAS (Usuario)
-    Página reserva.html accesible solo si está logueado el usuario
-    Formulario para seleccionar:
-    Fecha (solo días hábiles si querés limitar)
-    Hora (entre 10:00 y 19:00)
-    Barbero (dropdown desde MySQL)
-    Validar que la hora no esté ocupada (consulta a citas)
-    Guardar cita en MySQL con estado "pendiente"
-    Confirmación visual (mensaje en pantalla)
+💈 Barber Registration/Login (separately)
 
- 4. CONSULTAR Y EDITAR CITAS (Usuario)
-    Página mis_citas.html
-    Mostrar las citas del usuario actual
-    Opción de cancelar una cita (cambia estado a "cancelada")
-    Opción de reprogramar (actualizar fecha y hora)
+Create barber registration page (register_barbero.html)
 
-✂️ 5. PANEL DE BARBERO
-    Página panel_barbero.html
-    Mostrar lista de citas del barbero (por fecha)
-    Cambiar estado a "confirmada" o "cancelada"
-    Ver contacto del cliente (nombre + celular)
+Create barber login page (login_barbero.html)
 
-⚙️ 6. DETALLES FINALES
-    Página principal index.html con enlaces a login y registro
-    Estilos básicos (styles.css) para que se vea bonito
-    Validaciones con JavaScript en formularios
-    Guardar sesión con localStorage y redirigir si no está logueado
-    Mensajes de éxito/error con JS
+📅 3. APPOINTMENT BOOKING (User)
 
-🧪 7. PRUEBAS Y ENTREGA
-    Probar flujo completo: registro → login → reservar → consultar
-    Probar login de barbero y gestión de citas
-    Verificar que los datos estén correctos en MySQL
+reserva.html page accessible only if user is logged in
+
+Form to select:
+
+Date (only weekdays if desired)
+
+Time (between 10:00 and 19:00)
+
+Barber (dropdown loaded from MySQL)
+
+Validate that the time slot is not already booked (check against appointments)
+
+Save appointment in MySQL with status “pending”
+
+Visual confirmation (message on screen)
+
+🗓 4. VIEW & EDIT APPOINTMENTS (User)
+
+mis_citas.html page
+
+Show current user’s appointments
+
+Option to cancel an appointment (set status to “cancelled”)
+
+Option to reschedule (update date and time)
+
+✂️ 5. BARBER PANEL
+
+panel_barbero.html page
+
+Show list of the barber’s appointments (by date)
+
+Change appointment status to “confirmed” or “cancelled”
+
+View client contact info (name + phone number)
+
+⚙️ 6. FINAL TOUCHES
+
+Main page (index.html) with links to login and register
+
+Basic styles (styles.css) for a nice appearance
+
+Form validation using JavaScript
+
+Save session with localStorage and redirect if not logged in
+
+Show success/error messages using JS
+
+🧪 7. TESTING & DELIVERY
+
+    Test full flow: register → login → book → view/edit
+    Test barber login and appointment management
+    Check that data is correctly stored in MySQL
+
+    ------------------------------------------------------------------
+
+    commit 1
+
