@@ -1,0 +1,45 @@
+
+
+🧑 Registro/Login de Usuario
+    Crear página de registro para usuarios (register.html)
+    Crear página de login para usuarios (login.html)
+    Validar login con JS + MySQL 
+    Guardar sesión local (localStorage o similar)
+
+💈 Registro/Login de Barbero (por separado)
+    Crear página de registro de barbero (register_barbero.html)
+    Crear página de login de barbero (login_barbero.html)
+
+ 📅 3. RESERVA DE CITAS (Usuario)
+    Página reserva.html accesible solo si está logueado el usuario
+    Formulario para seleccionar:
+    Fecha (solo días hábiles si querés limitar)
+    Hora (entre 10:00 y 19:00)
+    Barbero (dropdown desde MySQL)
+    Validar que la hora no esté ocupada (consulta a citas)
+    Guardar cita en MySQL con estado "pendiente"
+    Confirmación visual (mensaje en pantalla)
+
+ 4. CONSULTAR Y EDITAR CITAS (Usuario)
+    Página mis_citas.html
+    Mostrar las citas del usuario actual
+    Opción de cancelar una cita (cambia estado a "cancelada")
+    Opción de reprogramar (actualizar fecha y hora)
+
+✂️ 5. PANEL DE BARBERO
+    Página panel_barbero.html
+    Mostrar lista de citas del barbero (por fecha)
+    Cambiar estado a "confirmada" o "cancelada"
+    Ver contacto del cliente (nombre + celular)
+
+⚙️ 6. DETALLES FINALES
+    Página principal index.html con enlaces a login y registro
+    Estilos básicos (styles.css) para que se vea bonito
+    Validaciones con JavaScript en formularios
+    Guardar sesión con localStorage y redirigir si no está logueado
+    Mensajes de éxito/error con JS
+
+🧪 7. PRUEBAS Y ENTREGA
+    Probar flujo completo: registro → login → reservar → consultar
+    Probar login de barbero y gestión de citas
+    Verificar que los datos estén correctos en MySQL

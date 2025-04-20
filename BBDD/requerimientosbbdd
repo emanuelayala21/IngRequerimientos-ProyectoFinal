@@ -1,0 +1,20 @@
+CREATE TABLE usuario (
+    cedula VARCHAR(20) PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL,
+    celular VARCHAR(20) NOT NULL
+);
+CREATE TABLE barbero (
+    cedula VARCHAR(20) PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL
+);
+CREATE TABLE cita (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    cedula_usuario VARCHAR(20) NOT NULL,
+    cedula_barbero VARCHAR(20) NOT NULL,
+    fecha DATE NOT NULL,
+    hora TIME NOT NULL,
+    estado VARCHAR(20) DEFAULT 'pendiente', 
+    FOREIGN KEY (cedula_usuario) REFERENCES usuario(cedula),
+    FOREIGN KEY (cedula_barbero) REFERENCES barbero(cedula)
+);
