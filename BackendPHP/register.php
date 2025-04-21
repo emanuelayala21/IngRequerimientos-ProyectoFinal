@@ -1,5 +1,5 @@
 <?php
-include('conectionBBDD.php'); // Incluir la conexión correctamente
+include('conectionBBDD.php');
 
 $cedula = $_POST["cedula"];
 $nombre = $_POST["nombre"];
@@ -7,16 +7,30 @@ $email = $_POST["email"];
 $celular = $_POST["celular"];
 $clave = $_POST["clave"];
 
-// Consulta SQL para insertar datos
-$sql = "INSERT INTO usuario (cedula, nombre, email, celular, clave) 
-        VALUES ('$cedula', '$nombre', '$email', '$celular', '$clave')";
+// Verificar si ya existe un usuario con ese email o cédula
+$checkSql = "SELECT * FROM usuario WHERE email = ? OR cedula = ?";
+$checkStmt = $conexion->prepare($checkSql);
+$checkStmt->bind_param("ss", $email, $cedula);
+$checkStmt->execute();
+$checkResult = $checkStmt->get_result();
 
-// Ejecutar la consulta y verificar si fue exitosa
-if ($conexion->query($sql) === TRUE) {
-    echo "Usuario registrado con éxito";
+if ($checkResult->num_rows > 0) {
+    echo "Ya existe un usuario con ese email o cédula.";
 } else {
-    echo "Error: " . $conexion->error;
+    // Insertar nuevo usuario
+    $insertSql = "INSERT INTO usuario (cedula, nombre, email, celular, clave) VALUES (?, ?, ?, ?, ?)";
+    $insertStmt = $conexion->prepare($insertSql);
+    $insertStmt->bind_param("sssss", $cedula, $nombre, $email, $celular, $clave);
+
+    if ($insertStmt->execute()) {
+        echo "success";
+    } else {
+        echo "Error al registrar al usuario.";
+    }
+
+    $insertStmt->close();
 }
 
-$conexion->close(); // Cerrar la conexión
+$checkStmt->close();
+$conexion->close();
 ?>

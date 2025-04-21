@@ -9,9 +9,9 @@
 
 💈 Barber Registration/Login (separately)
 
-Create barber registration page (register_barbero.html)
+Create barber registration page (register_barbero.html) done
 
-Create barber login page (login_barbero.html)
+Create barber login page (login_barbero.html) done
 
 📅 3. APPOINTMENT BOOKING (User)
 
